@@ -14,7 +14,7 @@ public:
 	size_t _bufcap;
 	size_t _bufleft;
 
-	size_t _free;
+	size_t _free;   // 空闲且不可分配的内存空间大小
 public:
 	inline void create (void *buf, size_t bufsiz) {
 		_buffer = (char *)buf;

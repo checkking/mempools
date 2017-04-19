@@ -37,7 +37,7 @@ public:
 		return NULL;
 	}
 
-	inline void free (void *ptr) {
+	inline void free(void *ptr) {
 		((xmem_node_t *)ptr)->next = _freelst;
 		_freelst = (xmem_node_t *) ptr;
 	}
