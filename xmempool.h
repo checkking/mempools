@@ -61,6 +61,11 @@ public:
         }
         return _pool[idx]._size;
     }
+
+    inline size_t max_alloc_size() {
+        return _maxsiz;
+    }
+
 private:
     int getidx (size_t size);
     static const int CNT = 10;

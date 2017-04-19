@@ -1,7 +1,7 @@
 CC=g++
 
-INCOUT=../output/include/
-LIBOUT=../output/lib/
+INCOUT=./output/include/
+LIBOUT=./output/lib/
 
 INCLUDES= 
 CFLAGS = -fsigned-char -Wall -W -pipe -Wno-unused-parameter -g -fPIC
