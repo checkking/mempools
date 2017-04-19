@@ -26,7 +26,11 @@ public:
     ~xmempool ();
     int create (void * buf, size_t bufsiz, 
             size_t bmin = sizeof(void *), size_t bmax = (1<<20), float rate = 2.0f);
+    int clear();
+    int clear (void *buffer, size_t size);
     int destroy ();
+
+    void * addbuf (void *buf, size_t size);
     
     inline void * malloc (size_t size) {
         int idx = getidx (size);

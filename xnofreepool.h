@@ -5,6 +5,9 @@
 
 #ifndef CHECKKING_XNOFREEPOOL_H
 #define CHECKKING_XNOFREEPOOL_H
+
+#include "mempool.h"
+
 namespace checkking {
 namespace mempool {
 class xnofreepool : public mempool

@@ -8,6 +8,11 @@
 
 #ifndef CHECKKING_XCOMPOOL_H
 #define CHECKKING_XCOMPOOL_H
+
+#include <set>
+#include "mempool.h"
+#include "xmempool.h"
+
 namespace checkking {
 namespace mempool {
 class xcompool : public mempool {
@@ -36,7 +41,9 @@ private:
     size_t _bufsiz;
     xmempool _pool;
     typedef std::set<void *> SET;
-    SET _set;
+    // 当需要的内存大小无法使用_buffer分配时，
+    // 直接调用malloc，_set保存malloc返回的首地址。
+    SET _set; 
 }; // class xcompool
 }
 }

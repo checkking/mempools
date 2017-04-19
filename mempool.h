@@ -1,5 +1,11 @@
 #ifndef CHECKKING_MEMPOOL_H
 #define CHECKKING_MEMPOOL_H
+
+#include <stdint.h>
+#include <stdlib.h>
+#include <stdexcept>
+#include <assert.h>
+
 namespace checkking {
 namespace mempool {
 class mempool {

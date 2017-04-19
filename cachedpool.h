@@ -24,10 +24,12 @@ namespace checkking {
 namespace mempool {
 class cachedpool : public mempool {
 public:
-    inline cachedpool: 
-            _buf_size(0),
-            _free_space(0),
-            _memlist(0) () {
+
+    inline cachedpool() {
+        _buf_size = 0;
+        _free_size = 0;
+        _free_space = 0;
+        _memlist = 0;
     }
 
     virtual void* malloc(size_t size);
@@ -51,7 +53,7 @@ public:
         _buf_size = _s_seg_size - sizeof(void*);
     }
 
-    virtual inline cachedpool() {
+    virtual inline ~cachedpool() {
         while (_memlist) {
             void* tmp = *(void **)_memlist;
             ::free(_memlist);
@@ -61,6 +63,7 @@ public:
 
 private:
     size_t _buf_size;
+    size_t _free_size;
     char* _free_space;
     void* _memlist;
 
